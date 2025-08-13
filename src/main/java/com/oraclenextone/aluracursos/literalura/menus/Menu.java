@@ -8,8 +8,9 @@ public class Menu {
                 1) Buscar Libro en Gutendex API
                 2) Buscar libro por Titulo en la Base de Datos 
                 3) Buscar Libro por Autor en la Base de Datos
-                4) Mostrar lista de Libros almacenados
-                5) Salir
+                4) Buscar Libros por Idioma en la Base de Datos
+                5) Mostrar lista de Libros almacenados
+                0) Salir
                 ******************************************************
                 """);
     }
@@ -22,9 +23,10 @@ public class Menu {
                 OBTENER LA LISTA DE LIBROS POR:
                 1) Titulos
                 2) Autores
-                3) Autores Vivos en un determinado ano
+                3) Autores Vivos en un determinado año
                 4) Idioma
-                5) Salir
+                5) Top 5 Libros mas descargados
+                0) Salir
                 ******************************************************
                 """);
     }
