@@ -1,6 +1,7 @@
 package com.oraclenextone.aluracursos.literalura;
 
 import com.oraclenextone.aluracursos.literalura.principal.Principal;
+import com.oraclenextone.aluracursos.literalura.repository.AutorRepository;
 import com.oraclenextone.aluracursos.literalura.repository.LibroRepository;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,8 @@ public class LiteraluraApplication implements CommandLineRunner{
 
 	@Autowired
 	private LibroRepository repository;
+	@Autowired
+	private AutorRepository autorRepository;
 
 	public static void main(String[] args) {
 		Dotenv dotenv = Dotenv.load();
@@ -27,7 +30,7 @@ public class LiteraluraApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		Principal principal = new Principal(repository);
+		Principal principal = new Principal(repository, autorRepository);
 		principal.aplicacionLiteralura();
     }
 }
