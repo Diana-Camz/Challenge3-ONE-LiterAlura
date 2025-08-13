@@ -6,15 +6,20 @@ import com.oraclenextone.aluracursos.literalura.repository.AutorRepository;
 import com.oraclenextone.aluracursos.literalura.repository.LibroRepository;
 import com.oraclenextone.aluracursos.literalura.services.ConsultaApi;
 import com.oraclenextone.aluracursos.literalura.services.Conversor;
+import io.github.cdimascio.dotenv.Dotenv;
 
 import java.util.*;
 
 public class Principal {
     private final ConsultaApi consultaApi = new ConsultaApi();
     private final Conversor conversor = new Conversor();
+    private static final String BASE_URL;
 
+    static {
+        Dotenv dotenv = Dotenv.load();
+        BASE_URL = dotenv.get("BASE_URL");
+    }
 
-    private static final String BASE_URL = "https://gutendex.com/books/";
     List<Libro> listaLibros;
     private LibroRepository repositoryL;
     private AutorRepository repositoryA;
